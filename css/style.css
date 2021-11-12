@@ -1,0 +1,42 @@
+body {
+  margin: 2rem;
+}
+svg {
+  display: block;
+}
+
+.svg {
+  position: relative;
+  z-index: 2;
+}
+
+.svg-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.filter {
+  background-color: lightgray;
+  padding: 2rem;
+}
+
+.filter label {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+}
+
+.data {
+  display: block;
+}
+
+rect {
+  display: block;
+}
+
+.data-container {
+  position: absolute;
+  z-index: -1;
+  bottom: 260px;
+  left: 55px;
+}
