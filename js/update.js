@@ -26,11 +26,7 @@ const update = (new_data) => {
 };
 
 const remove = (new_data) => {
-  d3.select(`#${new_data[0].type}`)
-    .join((exit) => {
-      exit.remove();
-    })
-    .remove();
+  d3.select(`#${new_data[0].type}`).remove();
 };
 
 export { update, remove };
