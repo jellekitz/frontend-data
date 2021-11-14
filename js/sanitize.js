@@ -50,6 +50,17 @@ const toNumber = (array) => {
   return emptyArray;
 };
 
+const addDash = (array) => {
+  const emptyArray = [];
+
+  array.forEach((str) => {
+    const addDash = str.replaceAll(" ", "-");
+    emptyArray.push(addDash);
+  });
+
+  return emptyArray;
+};
+
 export {
   capitalize,
   makeLowerCase,
@@ -58,4 +69,5 @@ export {
   translateLabel,
   removeText,
   toNumber,
+  addDash,
 };

@@ -6,6 +6,7 @@ import {
   translateLabel,
   removeText,
   toNumber,
+  addDash,
 } from "./sanitize.js";
 import { update, remove } from "./update.js";
 import { filter } from "./filter.js";
@@ -42,13 +43,34 @@ d3.json(
 
   const stringNumber = removeText(measure);
   const measureNumber = toNumber(stringNumber);
+  const dashedIngridient = addDash(ingredients);
 
   const newData = [
-    { type: `${ingredients[0]}`, value: measureNumber[0], color: "#581845" },
-    { type: `${ingredients[1]}`, value: measureNumber[1], color: "#C70039" },
-    { type: `${ingredients[2]}`, value: measureNumber[2], color: "#FFC300" },
-    { type: `${ingredients[3]}`, value: measureNumber[3], color: "#DAF7A6" },
-    { type: `${ingredients[4]}`, value: measureNumber[4], color: "#FF5733" },
+    {
+      type: `${dashedIngridient[0]}`,
+      value: measureNumber[0],
+      color: "#581845",
+    },
+    {
+      type: `${dashedIngridient[1]}`,
+      value: measureNumber[1],
+      color: "#C70039",
+    },
+    {
+      type: `${dashedIngridient[2]}`,
+      value: measureNumber[2],
+      color: "#FFC300",
+    },
+    {
+      type: `${dashedIngridient[3]}`,
+      value: measureNumber[3],
+      color: "#DAF7A6",
+    },
+    {
+      type: `${dashedIngridient[4]}`,
+      value: measureNumber[4],
+      color: "#FF5733",
+    },
   ];
 
   title(data.drinks[0].strDrink);
@@ -67,13 +89,10 @@ d3.json(
     d3.select("svg").attr("width", width).attr("height", height);
   });
 
-  // update(newData);
-
   d3.selectAll(".filter-us-only").on("change", function () {
     const checked = d3.select(this).property("checked");
     const name = d3.select(this).property("name");
     const filteredData = newData.filter((d) => d.type === name);
-    console.log(filteredData);
     if (checked === true) {
       update(filteredData);
     } else {

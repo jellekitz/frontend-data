@@ -1,6 +1,17 @@
+html,
 body {
   margin: 2rem;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Prata", serif;
+}
+
 svg {
   display: block;
 }
@@ -26,8 +37,13 @@ svg {
   justify-content: start;
 }
 
+.filter label input {
+  margin-right: 1rem;
+}
+
 .data {
   display: block;
+  width: 245px;
 }
 
 rect {
