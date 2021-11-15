@@ -7,16 +7,14 @@ const update = (new_data) => {
     .data(new_data, (d) => d.type)
     .join((enter) => {
       const rect_enter = enter.append("rect");
-      rect_enter.append("title");
+      rect_enter.append("p").text((d) => d.value + " cl");
       return rect_enter;
     })
     .transition()
     .style("background", (d) => d.color)
     .attr("class", "data")
     .attr("id", (d) => d.type)
-    .style("height", (d) => d.value * 10 + "px")
-    .select("title")
-    .text((d) => d.type);
+    .style("height", (d) => d.value * 12 + "px");
 };
 
 const remove = (new_data) => {

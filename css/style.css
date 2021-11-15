@@ -61,9 +61,21 @@ rect {
   display: block;
 }
 
+rect p {
+  color: #fff;
+  display: flex;
+  margin: 0;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5rem;
+  font-weight: bold;
+}
+
 .data-container {
   position: absolute;
   z-index: -1;
   bottom: 260px;
   left: 55px;
+  max-height: 144px;
 }
