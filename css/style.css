@@ -33,12 +33,23 @@ svg {
 
 .filter label {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: start;
+  align-items: center;
+}
+
+.filter label div.color {
+  width: 0.7rem;
+  height: 0.7rem;
+  order: 1;
+  margin-right: 0.5rem;
+}
+
+.filter label div.text {
+  order: 2;
 }
 
 .filter label input {
-  margin-right: 1rem;
+  margin-left: auto;
+  order: 3;
 }
 
 .data {
