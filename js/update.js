@@ -5,17 +5,11 @@ const update = (new_data) => {
     .attr("id", new_data[0].type)
     .selectAll("rect")
     .data(new_data, (d) => d.type)
-    .join(
-      (enter) => {
-        const rect_enter = enter.append("rect");
-        rect_enter.append("title");
-        return rect_enter;
-      },
-      (update) => update,
-      (exit) => {
-        exit.remove();
-      }
-    )
+    .join((enter) => {
+      const rect_enter = enter.append("rect");
+      rect_enter.append("title");
+      return rect_enter;
+    })
     .transition()
     .style("background", (d) => d.color)
     .attr("class", "data")
@@ -26,7 +20,13 @@ const update = (new_data) => {
 };
 
 const remove = (new_data) => {
-  d3.select(`#${new_data[0].type}`).remove();
+  d3.select(`#${new_data[0].type}`)
+    .select("rect")
+    .transition()
+    .style("height", "0px")
+    .remove();
+
+  d3.select(`#${new_data[0].type}`).transition().delay(0).remove();
 };
 
 export { update, remove };

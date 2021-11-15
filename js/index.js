@@ -78,7 +78,7 @@ d3.json(
   const width = 300;
   const height = 500;
 
-  // filyer
+  // filter
 
   filter(newData);
 
