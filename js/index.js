@@ -6,10 +6,11 @@ import { title } from "./title.js";
 d3.json(
   "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=pornstar"
 ).then((data) => {
-  const ingredients = [];
-  const measure = [];
+  const ingredients = []; // maakt een lege array aan voor ingredients
+  const measure = []; // maakt een lege array aan voor measure
 
   data.drinks.forEach((obj) => {
+    // voor elk object binnen drinks pakken we de vijf ingredienten en hoeveelheid.
     const firstIngr = obj["strIngredient1"];
     const secondIngr = obj["strIngredient2"];
     const thirdIngr = obj["strIngredient3"];
@@ -22,7 +23,7 @@ d3.json(
     const fourthMeasure = obj["strMeasure4"];
     const fifthMeasure = obj["strMeasure5"];
 
-    ingredients.push(firstIngr, secondIngr, thirdIngr, fourthIngr, fifthIngr);
+    ingredients.push(firstIngr, secondIngr, thirdIngr, fourthIngr, fifthIngr); // beide stoppen we in de net aangemaakte arrays
     measure.push(
       firstMeasure,
       secondMeasure,
@@ -32,11 +33,12 @@ d3.json(
     );
   });
 
-  const stringNumber = removeText(measure);
-  const measureNumber = toNumber(stringNumber);
-  const dashedIngridient = addDash(ingredients);
+  const stringNumber = removeText(measure); // stopt de schoongemaakte data in een nieuwe constante
+  const measureNumber = toNumber(stringNumber); // zelfde doen we hier
+  const dashedIngridient = addDash(ingredients); // en hier
 
   const newData = [
+    // we maken een nieuwe array aan met al onze schoongemaakte data
     {
       type: `${dashedIngridient[0]}`,
       value: measureNumber[0],
@@ -64,7 +66,11 @@ d3.json(
     },
   ];
 
+  // display de title
+
   title(data.drinks[0].strDrink);
+
+  // constante declareren
 
   const width = 300;
   const height = 500;
@@ -76,7 +82,7 @@ d3.json(
     d3.select("svg").attr("width", width).attr("height", height);
   });
 
-  // filter
+  // filter op onclick
 
   filter(newData);
 
