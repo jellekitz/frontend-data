@@ -78,16 +78,16 @@ d3.json(
   const width = 300;
   const height = 500;
 
-  // filter
-
-  filter(newData);
-
   // laad de svg in
 
   d3.xml("../images/cocktail.svg").then((data) => {
     d3.select(".svg").node().append(data.documentElement);
     d3.select("svg").attr("width", width).attr("height", height);
   });
+
+  // filter
+
+  filter(newData);
 
   d3.selectAll(".filter-us-only").on("change", function () {
     const checked = d3.select(this).property("checked");
