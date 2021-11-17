@@ -1,13 +1,4 @@
-import {
-  capitalize,
-  makeLowerCase,
-  noSpace,
-  addSpace,
-  translateLabel,
-  removeText,
-  toNumber,
-  addDash,
-} from "./sanitize.js";
+import { removeText, toNumber, addDash } from "./sanitize.js";
 import { update, remove } from "./update.js";
 import { filter } from "./filter.js";
 import { title } from "./title.js";
