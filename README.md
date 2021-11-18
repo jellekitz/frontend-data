@@ -8,7 +8,7 @@ Maak een data visualisatie (met behulp van de d3-bibliotheek) op basis van gegev
 <details>
   <summary>Klik hier voor een geanimeerde gif!</summary>
   <img src="https://user-images.githubusercontent.com/15923433/142398180-b4b6a3e3-334d-4e91-8ca2-53ac58fd3c66.gif"/>
-</details
+</details>
 
 ## Inhoudsopgave 📑
 
