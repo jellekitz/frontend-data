@@ -3,6 +3,9 @@ import { update, remove } from "./update.js";
 import { filter } from "./filter.js";
 import { title } from "./title.js";
 
+// hierboven importeren we alle funcites die we nodig hebben in dit document.
+
+// hieronder halen we de dataset op dmv de D3 fetch.
 d3.json(
   "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=pornstar"
 ).then((data) => {
