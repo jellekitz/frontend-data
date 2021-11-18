@@ -75,11 +75,11 @@ d3.json(
   const width = 300;
   const height = 500;
 
-  // laad de svg in
+  // laad de svg (cocktail glas) in. We halen het .svg bestand op uit images
 
   d3.xml("../images/cocktail.svg").then((data) => {
-    d3.select(".svg").node().append(data.documentElement);
-    d3.select("svg").attr("width", width).attr("height", height);
+    d3.select(".svg").node().append(data.documentElement); // we selecteren de .svg section en stoppen daar de svg in als nieuw DOM element.
+    d3.select("svg").attr("width", width).attr("height", height); // hier geven we de width en height mee die we hier boven hebben gedefineerd.
   });
 
   // filter op onclick
@@ -87,13 +87,13 @@ d3.json(
   filter(newData);
 
   d3.selectAll(".filter-us-only").on("change", function () {
-    const checked = d3.select(this).property("checked");
-    const name = d3.select(this).property("name");
-    const filteredData = newData.filter((d) => d.type === name);
+    const checked = d3.select(this).property("checked"); // checkt of de input is geselecteerd
+    const name = d3.select(this).property("name"); // checkt welke name het is
+    const filteredData = newData.filter((d) => d.type === name); // pakken het juiste object wat aangklikt is binnen het filter als deze overeenkomt
     if (checked === true) {
-      update(filteredData);
+      update(filteredData); // voert de update functie uit wanneer de input is geselecteerd
     } else {
-      remove(filteredData);
+      remove(filteredData); // voert de remove functie uit wanneer de input niet geselecteerd is
     }
   });
 });
