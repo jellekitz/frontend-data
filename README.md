@@ -3,7 +3,7 @@
 ## Assesment
 Maak een data visualisatie (met behulp van de d3-bibliotheek) op basis van gegeven data waar data kan worden verkend door middel van interactie met enter(), update() en exit().
 
-<img src="https://user-images.githubusercontent.com/15923433/142396799-222a33a2-e404-47ae-a930-e90c52a9bd1a.png" />
+<img src="https://user-images.githubusercontent.com/15923433/142396930-cfc1db51-9e90-4ce6-9195-f414fa9e784b.png" />
 
 ## Inhoudsopgave 📑
 
