@@ -1,6 +1,27 @@
 body {
-  margin: 2rem;
+  margin: 4rem 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
 }
+
+@media only screen and (max-width: 1000px) {
+  body {
+    margin: 4rem 2rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Prata", serif;
+}
+
+.title-container {
+  max-width: 55rem;
+  margin: 0 auto;
+}
+
 svg {
   display: block;
 }
@@ -13,25 +34,82 @@ svg {
 .svg-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  max-width: 55rem;
+  margin: 0 auto;
 }
 
 .filter {
+  min-width: 13rem;
   background-color: lightgray;
   padding: 2rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .svg-container {
+    display: block;
+  }
+
+  .filter {
+    min-width: auto;
+  }
+}
+
+.filter p {
+  display: inline;
+}
+
+.filter p:nth-of-type(2) {
+  font-weight: bold;
+}
+
+.filter h2 {
+  margin: 1.2rem 0 1.2rem 0;
+  font-size: 1.2rem;
+}
+
+.filter h2:nth-of-type(2) {
+  margin: 1.2rem 0;
+}
+
 .filter label {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: start;
+  align-items: center;
+}
+
+.filter label div.color {
+  width: 0.7rem;
+  height: 0.7rem;
+  order: 1;
+  margin-right: 0.5rem;
+}
+
+.filter label div.text {
+  order: 2;
+}
+
+.filter label input {
+  margin-left: auto;
+  order: 3;
 }
 
 .data {
   display: block;
+  width: 245px;
 }
 
 rect {
   display: block;
+}
+
+rect p {
+  color: #fff;
+  display: flex;
+  margin: 0;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5rem;
+  font-weight: bold;
 }
 
 .data-container {
@@ -39,4 +117,5 @@ rect {
   z-index: -1;
   bottom: 260px;
   left: 55px;
+  max-height: 144px;
 }
