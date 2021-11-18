@@ -1,6 +1,6 @@
 html,
 body {
-  margin: 2rem;
+  margin: 2rem 4rem;
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -10,6 +10,11 @@ h2,
 h3,
 h4 {
   font-family: "Prata", serif;
+}
+
+.title-container {
+  max-width: 55rem;
+  margin: 0 auto;
 }
 
 svg {
@@ -24,11 +29,30 @@ svg {
 .svg-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  max-width: 55rem;
+  margin: 0 auto;
 }
 
 .filter {
+  min-width: 13rem;
   background-color: lightgray;
   padding: 2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    margin: 2rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .svg-container {
+    display: block;
+  }
+
+  .filter {
+    min-width: auto;
+  }
 }
 
 .filter p {

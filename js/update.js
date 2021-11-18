@@ -1,9 +1,11 @@
 const update = (new_data) => {
-  d3.select(".data-container")
+  const g = d3
+    .select(".data-container")
     .append("g")
     .attr("class", "data-group")
-    .attr("id", new_data[0].type)
-    .selectAll("rect")
+    .attr("id", new_data[0].type);
+
+  g.selectAll("rect")
     .data(new_data, (d) => d.type)
     .join((enter) => {
       const rect_enter = enter.append("rect");
